@@ -1,11 +1,24 @@
-import 'package:clean_movie/domian/entities/movie_entity.dart';
-import 'package:clean_movie/domian/repositories/movie_repository.dart';
-import 'package:clean_movie/domian/usecases/get_trending_movies_usecase.dart';
+
+
+
+
+
+
+
+
+
+
+
+import 'package:clean_movie/trending_movie/domian/entities/movie_entity.dart';
+import 'package:clean_movie/trending_movie/domian/repositories/movie_repository.dart';
+import 'package:clean_movie/trending_movie/domian/usecases/get_trending_movies_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
- import 'get_trending_movies_test.mocks.dart';
+import 'get_trending_movies_usecase_test.mocks.dart';
+
+
 @GenerateNiceMocks([MockSpec<MovieRepository>()])
 
 void main(){
