@@ -1,7 +1,8 @@
 
 
 
-import 'package:clean_movie/popular_movie/domian/entities/movie_entity.dart';
+
+import 'package:clean_movie/features/popular_movie/domian/entities/movie_entity.dart';
 
 abstract class MovieRepository{
 

@@ -1,10 +1,10 @@
-class MovieEntity {
+class TrendingMovieEntity {
   final int id;
   final String title;
   final String overview;
   final String posterPath;
 
-  MovieEntity(
+  TrendingMovieEntity(
       {required this.id,
       required this.title,
       required this.overview,

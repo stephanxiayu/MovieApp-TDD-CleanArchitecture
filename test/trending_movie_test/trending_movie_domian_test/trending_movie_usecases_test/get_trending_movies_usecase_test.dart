@@ -3,37 +3,34 @@
 
 
 
-
-
-
-
-
-
-import 'package:clean_movie/trending_movie/domian/entities/movie_entity.dart';
-import 'package:clean_movie/trending_movie/domian/repositories/movie_repository.dart';
-import 'package:clean_movie/trending_movie/domian/usecases/get_trending_movies_usecase.dart';
+import 'package:clean_movie/features/trending_movie/domian/entities/movie_entity.dart';
+import 'package:clean_movie/features/trending_movie/domian/repositories/movie_repository.dart';
+import 'package:clean_movie/features/trending_movie/domian/usecases/get_trending_movies_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
+
 import 'get_trending_movies_usecase_test.mocks.dart';
 
 
-@GenerateNiceMocks([MockSpec<MovieRepository>()])
+
+
+@GenerateNiceMocks([MockSpec<TrendingMovieRepository>()])
 
 void main(){
- late GetTrendingMovies usecase;
- late MockMovieRepository mockMovieRepository;
+ late GetTrendingMovies getTrendingMoviesUsecase;
+ late MockTrendingMovieRepository mockMovieRepository;
 
   setUp(()  {
-mockMovieRepository=MockMovieRepository();
-usecase=GetTrendingMovies(mockMovieRepository);
+mockMovieRepository=MockTrendingMovieRepository();
+getTrendingMoviesUsecase=GetTrendingMovies(mockMovieRepository);
   });
 
 
 final tMovieList=[
-  MovieEntity(id: 1, title: "Test Movie 1", overview: "Description 1", posterPath: "/image1"),
-    MovieEntity(id: 2, title: "Test Movie 2", overview: "Description 2", posterPath: "/image2"),
+  TrendingMovieEntity(id: 1, title: "Test Movie 1", overview: "Description 1", posterPath: "/image1"),
+    TrendingMovieEntity(id: 2, title: "Test Movie 2", overview: "Description 2", posterPath: "/image2"),
 ];
   test('should get trending move from respository',()async{
     //arrange
@@ -41,7 +38,7 @@ final tMovieList=[
 
     // act
 
-    final result=await usecase();
+    final result=await getTrendingMoviesUsecase();
 
     //assert
 

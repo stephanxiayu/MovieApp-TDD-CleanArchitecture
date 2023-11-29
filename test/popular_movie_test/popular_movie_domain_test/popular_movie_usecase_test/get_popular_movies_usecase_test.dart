@@ -1,7 +1,7 @@
 
-import 'package:clean_movie/popular_movie/domian/entities/movie_entity.dart';
-import 'package:clean_movie/popular_movie/domian/repositories/movie_repository.dart';
-import 'package:clean_movie/popular_movie/domian/usecases/get_popular_movies_usecase.dart';
+import 'package:clean_movie/features/popular_movie/domian/entities/movie_entity.dart';
+import 'package:clean_movie/features/popular_movie/domian/repositories/movie_repository.dart';
+import 'package:clean_movie/features/popular_movie/domian/usecases/get_popular_movies_usecase.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

@@ -5,9 +5,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:clean_movie/trending_movie/domian/entities/movie_entity.dart'
+import 'package:clean_movie/features/trending_movie/domian/entities/movie_entity.dart'
     as _i4;
-import 'package:clean_movie/trending_movie/domian/repositories/movie_repository.dart'
+import 'package:clean_movie/features/trending_movie/domian/repositories/movie_repository.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
@@ -24,32 +24,22 @@ import 'package:mockito/mockito.dart' as _i1;
 // ignore_for_file: camel_case_types
 // ignore_for_file: subtype_of_sealed_class
 
-/// A class which mocks [MovieRepository].
+/// A class which mocks [TrendingMovieRepository].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockMovieRepository extends _i1.Mock implements _i2.MovieRepository {
+class MockTrendingMovieRepository extends _i1.Mock
+    implements _i2.TrendingMovieRepository {
   @override
-  _i3.Future<List<_i4.MovieEntity>> getTrendingMovies() => (super.noSuchMethod(
+  _i3.Future<List<_i4.TrendingMovieEntity>> getTrendingMovies() =>
+      (super.noSuchMethod(
         Invocation.method(
           #getTrendingMovies,
           [],
         ),
-        returnValue:
-            _i3.Future<List<_i4.MovieEntity>>.value(<_i4.MovieEntity>[]),
+        returnValue: _i3.Future<List<_i4.TrendingMovieEntity>>.value(
+            <_i4.TrendingMovieEntity>[]),
         returnValueForMissingStub:
-            _i3.Future<List<_i4.MovieEntity>>.value(<_i4.MovieEntity>[]),
-      ) as _i3.Future<List<_i4.MovieEntity>>);
-
-  @override
-  _i3.Future<List<_i4.MovieEntity>> searchMovies(String? query) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #searchMovies,
-          [query],
-        ),
-        returnValue:
-            _i3.Future<List<_i4.MovieEntity>>.value(<_i4.MovieEntity>[]),
-        returnValueForMissingStub:
-            _i3.Future<List<_i4.MovieEntity>>.value(<_i4.MovieEntity>[]),
-      ) as _i3.Future<List<_i4.MovieEntity>>);
+            _i3.Future<List<_i4.TrendingMovieEntity>>.value(
+                <_i4.TrendingMovieEntity>[]),
+      ) as _i3.Future<List<_i4.TrendingMovieEntity>>);
 }

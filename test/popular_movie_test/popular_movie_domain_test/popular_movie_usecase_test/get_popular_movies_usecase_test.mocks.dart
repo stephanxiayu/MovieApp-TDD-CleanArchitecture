@@ -5,9 +5,9 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i3;
 
-import 'package:clean_movie/popular_movie/domian/entities/movie_entity.dart'
+import 'package:clean_movie/features/popular_movie/domian/entities/movie_entity.dart'
     as _i4;
-import 'package:clean_movie/popular_movie/domian/repositories/movie_repository.dart'
+import 'package:clean_movie/features/popular_movie/domian/repositories/movie_repository.dart'
     as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
