@@ -29,19 +29,6 @@ import 'package:mockito/mockito.dart' as _i1;
 /// See the documentation for Mockito's code generation for more information.
 class MockMovieRepository extends _i1.Mock implements _i2.MovieRepository {
   @override
-  _i3.Future<List<_i4.MovieEntity>> searchMovies(String? query) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #searchMovies,
-          [query],
-        ),
-        returnValue:
-            _i3.Future<List<_i4.MovieEntity>>.value(<_i4.MovieEntity>[]),
-        returnValueForMissingStub:
-            _i3.Future<List<_i4.MovieEntity>>.value(<_i4.MovieEntity>[]),
-      ) as _i3.Future<List<_i4.MovieEntity>>);
-
-  @override
   _i3.Future<List<_i4.MovieEntity>> getPopularMovies() => (super.noSuchMethod(
         Invocation.method(
           #getPopularMovies,
