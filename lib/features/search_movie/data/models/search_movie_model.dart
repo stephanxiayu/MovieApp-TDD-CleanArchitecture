@@ -15,7 +15,7 @@ class SearchMovieModel {
       id: json['id'],
       title: json['title'],
       overview: json['overview'],
-      posterPath: json['posterPath'],
+      posterPath: json['poster_path'],
     );
   }
 
@@ -24,7 +24,7 @@ Map<String, dynamic>toJson(){
     'id': id,
       'title': title,
       'overview': overview,
-      'posterPath': posterPath
+      'poster_path': posterPath
       };
 }
 

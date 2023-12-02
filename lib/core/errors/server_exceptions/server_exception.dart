@@ -1,5 +1,5 @@
 class ServerException implements Exception{
   final String message;
 
-  ServerException({ this.message = "Server error"}); 
+  ServerException(String s, { this.message = "Server error"}); 
 }

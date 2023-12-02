@@ -14,7 +14,7 @@ class SearchMovieRemoteDataSourceImpl implements SearchgMovieRemoteDataSource {
 
   SearchMovieRemoteDataSourceImpl({required this.client});
 
-  static const baseUrl = "https://api.themoviedb.org3";
+  static const baseUrl = "https://api.themoviedb.org/3";
   static const apiKey = "2ba9c5f0306f4c6bcc5678e2cdbbab5e";
   @override
   Future<List<SearchMovieModel>> searchMovies(String query)async {
@@ -28,7 +28,7 @@ class SearchMovieRemoteDataSourceImpl implements SearchgMovieRemoteDataSource {
               .toList();
       return searchMovies;
     }else{
-      throw ServerException();
+    throw ServerException('Server returned status code: ${response.statusCode}, body: ${response.body}');
     }
   }
 }

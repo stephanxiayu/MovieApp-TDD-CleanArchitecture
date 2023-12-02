@@ -7,17 +7,20 @@ import 'package:clean_movie/features/trending_movie/data/models/trending_movie_m
 
 import 'package:http/http.dart' as http;
 
-class TrendingMovieRemoteDataSourceImpl implements TrendingMovieRemoteDataSource {
+class TrendingMovieRemoteDataSourceImpl
+    implements TrendingMovieRemoteDataSource {
   final http.Client client;
 
   TrendingMovieRemoteDataSourceImpl({required this.client});
 
-  static const baseUrl = "https://api.themoviedb.org3";
+  static const baseUrl = "https://api.themoviedb.org/3";
   static const apiKey = "2ba9c5f0306f4c6bcc5678e2cdbbab5e";
+
   @override
   Future<List<TrendingMovieModel>> getTrendingMovie() async {
-    final response =
-        await client.get(Uri.parse("$baseUrl/trending/movie/day?api_key=$apiKey"));
+    final response = await client
+        .get(Uri.parse("$baseUrl/trending/movie/day?api_key=$apiKey"));
+
     if (response.statusCode == 200) {
       final responseBody = json.decode(response.body);
       final List<TrendingMovieModel> trendingMovies =
@@ -25,8 +28,9 @@ class TrendingMovieRemoteDataSourceImpl implements TrendingMovieRemoteDataSource
               .map((movie) => TrendingMovieModel.fromJson(movie))
               .toList();
       return trendingMovies;
-    }else{
-      throw ServerException();
+    } else {
+      throw ServerException(
+          'Server returned status code: ${response.statusCode}, body: ${response.body}');
     }
   }
 }
