@@ -9,7 +9,7 @@ import 'package:clean_movie/features/search_movie/data/models/search_movie_model
 
 import 'package:http/http.dart' as http;
 
-class SearchMovieRemoteDataSourceImpl implements SearchgMovieRemoteDataSource {
+class SearchMovieRemoteDataSourceImpl implements SearchMovieRemoteDataSource {
   final http.Client client;
 
   SearchMovieRemoteDataSourceImpl({required this.client});

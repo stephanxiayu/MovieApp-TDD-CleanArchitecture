@@ -16,7 +16,7 @@ import 'search_movie_remote_datasources_test.mocks.dart';
 
 @GenerateMocks([http.Client])
 void main(){
- late SearchgMovieRemoteDataSource remoteDataSources;
+ late SearchMovieRemoteDataSource remoteDataSources;
 late MockClient mockHttpClient;
   setUp(()async{
 mockHttpClient=MockClient();
