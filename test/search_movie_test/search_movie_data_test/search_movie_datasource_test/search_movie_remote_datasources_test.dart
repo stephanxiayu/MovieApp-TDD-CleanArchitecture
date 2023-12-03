@@ -40,7 +40,7 @@ remoteDataSources=SearchMovieRemoteDataSourceImpl(client:mockHttpClient);
 }
 ''';
 
-const sUrl = 'https://api.themoviedb.org/3/search/movie?query=${tQuery}&api_key=2ba9c5f0306f4c6bcc5678e2cdbbab5e';
+const sUrl = 'https://api.themoviedb.org/3/search/movie?query=$tQuery&api_key=2ba9c5f0306f4c6bcc5678e2cdbbab5e';
 
  test('should perfom a GET request on a url to get search movies', () async {
     // arrange
