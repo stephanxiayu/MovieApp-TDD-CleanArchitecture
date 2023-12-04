@@ -1,6 +1,7 @@
 import 'package:clean_movie/features/popular_movie/domian/entities/movie_entity.dart';
 import 'package:clean_movie/features/popular_movie/domian/repositories/movie_repository.dart';
 import 'package:clean_movie/features/popular_movie/domian/usecases/get_popular_movies_usecase.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -32,7 +33,7 @@ void main() {
   test('should get popular move from respository', () async {
     //arrange
     when(mockMovieRepository.getPopularMovies())
-        .thenAnswer((_) async => tMovieList);
+        .thenAnswer((_) async => Right(tMovieList));
 
     // act
 
@@ -40,7 +41,7 @@ void main() {
 
     //assert
 
-    expect(result, tMovieList);
+    expect(result, equals(Right(tMovieList)));
 
     verify(mockMovieRepository.getPopularMovies());
     verifyNoMoreInteractions(mockMovieRepository);

@@ -29,8 +29,7 @@ class TrendingMovieRemoteDataSourceImpl
               .toList();
       return trendingMovies;
     } else {
-      throw ServerException(
-          'Server returned status code: ${response.statusCode}, body: ${response.body}');
+      throw ServerException();
     }
   }
 }

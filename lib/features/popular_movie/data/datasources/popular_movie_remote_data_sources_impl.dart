@@ -1,8 +1,5 @@
 import 'dart:convert';
 
-
-
-
 import 'package:clean_movie/core/errors/server_exceptions/server_exception.dart';
 import 'package:clean_movie/features/popular_movie/data/datasources/popular_movie_remote_data_sources.dart';
 import 'package:clean_movie/features/popular_movie/data/models/popular_movie_model.dart';
@@ -26,8 +23,8 @@ class PopularMovieRemoteDataSourceImpl implements PopularMovieRemoteDataSource {
               .map((movie) => PopularMovieModel.fromJson(movie))
               .toList();
       return popularMovies;
-    }else{
-  throw ServerException('Server returned status code: ${response.statusCode}, body: ${response.body}');
+    } else {
+      throw ServerException();
     }
   }
 }

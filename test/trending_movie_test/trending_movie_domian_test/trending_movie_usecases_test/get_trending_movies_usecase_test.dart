@@ -1,6 +1,7 @@
 import 'package:clean_movie/features/trending_movie/domian/entities/movie_entity.dart';
 import 'package:clean_movie/features/trending_movie/domian/repositories/movie_repository.dart';
 import 'package:clean_movie/features/trending_movie/domian/usecases/get_trending_movies_usecase.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
@@ -17,7 +18,6 @@ void main() {
     getTrendingMoviesUsecase = GetTrendingMovies(mockMovieRepository);
   });
 
-
   final tMovieList = [
     const TrendingMovieEntity(
         id: 1,
@@ -33,7 +33,7 @@ void main() {
   test('should get trending move from respository', () async {
     //arrange
     when(mockMovieRepository.getTrendingMovies())
-        .thenAnswer((_) async => tMovieList);
+        .thenAnswer((_) async => Right(tMovieList));
 
     // act
 
@@ -41,7 +41,7 @@ void main() {
 
     //assert
 
-    expect(result, tMovieList);
+    expect(result, equals(Right(tMovieList)));
 
     verify(mockMovieRepository.getTrendingMovies());
     verifyNoMoreInteractions(mockMovieRepository);
