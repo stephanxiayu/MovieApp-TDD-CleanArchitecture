@@ -18,12 +18,12 @@ void main() {
   });
 
   final tMovieList = [
-    MovieEntity(
+    const MovieEntity(
         id: 1,
         title: "Test Movie 1",
         overview: "Description 1",
         posterPath: "/image1"),
-    MovieEntity(
+    const MovieEntity(
         id: 2,
         title: "Test Movie 2",
         overview: "Description 2",

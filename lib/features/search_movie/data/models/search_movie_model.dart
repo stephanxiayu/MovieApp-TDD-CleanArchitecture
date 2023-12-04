@@ -1,3 +1,5 @@
+import 'package:clean_movie/features/search_movie/domian/entities/search_movie_entity.dart';
+
 class SearchMovieModel {
   final int id;
   final String title;
@@ -27,5 +29,12 @@ Map<String, dynamic>toJson(){
       'poster_path': posterPath
       };
 }
-
+  SearchMovieEntity toSearchEntity() {
+    return SearchMovieEntity(
+        id: id,
+         overview: overview, 
+         title: title, 
+         posterPath: posterPath
+         );
+  }
 }

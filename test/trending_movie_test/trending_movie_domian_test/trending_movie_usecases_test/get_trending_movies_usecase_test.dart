@@ -17,13 +17,14 @@ void main() {
     getTrendingMoviesUsecase = GetTrendingMovies(mockMovieRepository);
   });
 
+
   final tMovieList = [
-    TrendingMovieEntity(
+    const TrendingMovieEntity(
         id: 1,
         title: "Test Movie 1",
         overview: "Description 1",
         posterPath: "/image1"),
-    TrendingMovieEntity(
+    const TrendingMovieEntity(
         id: 2,
         title: "Test Movie 2",
         overview: "Description 2",

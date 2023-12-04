@@ -1,3 +1,5 @@
+import 'package:clean_movie/features/popular_movie/domian/entities/movie_entity.dart';
+
 class PopularMovieModel {
   final int id;
   final String title;
@@ -19,13 +21,21 @@ class PopularMovieModel {
     );
   }
 
-Map<String, dynamic>toJson(){
-  return {
-    'id': id,
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
       'title': title,
       'overview': overview,
       'poster_path': posterPath
-      };
-}
+    };
+  }
 
+  MovieEntity toEntity() {
+    return MovieEntity(
+        id: id,
+         overview: overview, 
+         title: title, 
+         posterPath: posterPath
+         );
+  }
 }

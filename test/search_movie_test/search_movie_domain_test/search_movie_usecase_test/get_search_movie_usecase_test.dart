@@ -22,12 +22,12 @@ searchMoviesUsecase = SearchMovies(mockSearchMovieRepository);
   });
   const String tQuery='Inception';
   final tMovieList = [
-    SearchMovieEntity(
+    const SearchMovieEntity(
         id: 1,
         title: "Test Movie 1",
         overview: "Description 1",
         posterPath: "/image1"),
-    SearchMovieEntity(
+    const SearchMovieEntity(
         id: 2,
         title: "Test Movie 2",
         overview: "Description 2",

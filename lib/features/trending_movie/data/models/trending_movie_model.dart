@@ -1,3 +1,5 @@
+import 'package:clean_movie/features/trending_movie/domian/entities/movie_entity.dart';
+
 class TrendingMovieModel {
   final int id;
   final String title;
@@ -26,5 +28,14 @@ class TrendingMovieModel {
       'overview': overview,
       'poster_path': posterPath
     };
+  }
+
+   TrendingMovieEntity toTrendingEntity() {
+    return TrendingMovieEntity(
+        id: id,
+         overview: overview, 
+         title: title, 
+         posterPath: posterPath
+         );
   }
 }
