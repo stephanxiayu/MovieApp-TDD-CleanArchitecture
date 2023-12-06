@@ -35,18 +35,7 @@ void main() {
         overview: "Description 2",
         posterPath: "/image2"),
   ];
-  final tTrendingMovieEntityList = [
-    const TrendingMovieEntity(
-        id: 1,
-        title: "Test Movie 1",
-        overview: "Description 1",
-        posterPath: "/image1"),
-    const TrendingMovieEntity(
-        id: 2,
-        title: "Test Movie 2",
-        overview: "Description 2",
-        posterPath: "/image2"),
-  ];
+
   test("should get trending movie from remote data source", () async {
     when(mockTrendingMovieRemoteDataSource.getTrendingMovie())
         .thenAnswer((_) async => tTrendingMovieList);

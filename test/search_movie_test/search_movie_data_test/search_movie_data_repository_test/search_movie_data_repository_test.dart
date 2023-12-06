@@ -35,18 +35,7 @@ void main() {
         overview: "Description 2",
         posterPath: "/image2"),
   ];
-  final tSearchMovieEntityList = [
-    const SearchMovieEntity(
-        id: 1,
-        title: "Test Movie 1",
-        overview: "Description 1",
-        posterPath: "/image1"),
-    const SearchMovieEntity(
-        id: 2,
-        title: "Test Movie 2",
-        overview: "Description 2",
-        posterPath: "/image2"),
-  ];
+
   test("should get search movie from remote data source", () async {
     when(mockSearchMovieRemoteDataSource.searchMovies(tQuery))
         .thenAnswer((_) async => tSearchMovieList);
