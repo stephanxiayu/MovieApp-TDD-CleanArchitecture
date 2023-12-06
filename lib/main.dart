@@ -1,5 +1,12 @@
+import 'package:clean_movie/core/components/navigation_bar/navigation_bar.dart';
+import 'package:clean_movie/features/popular_movie/presentation/bloc/bloc_popular_movie_event.dart';
+import 'package:clean_movie/features/popular_movie/presentation/bloc/popular_movie_bloc.dart';
+import 'package:clean_movie/features/search_movie/presentation/bloc/search_movie_bloc.dart';
+import 'package:clean_movie/features/trending_movie/presentation/bloc/bloc_trending_movie_event.dart';
+import 'package:clean_movie/features/trending_movie/presentation/bloc/trending_movie_bloc.dart';
 import 'package:clean_movie/injection_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   getItinit();
@@ -13,25 +20,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Work in Progress',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+      theme: ThemeData.dark(
         useMaterial3: true,
       ),
-      home: const MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-        child: Text("work in progress"),
-      ),
+      home: MultiBlocProvider(providers: [
+        BlocProvider(
+          create: (context) =>
+              getIt<PopularMovieBloc>()..add(FetchPopularMovies()),
+        ),
+        BlocProvider(
+          create: (context) =>
+              getIt<TrendingMovieBloc>()..add(FetchTrendingMovies()),
+        ),
+        BlocProvider(
+          create: (context) => getIt<SearchMovieBloc>(),
+        ),
+      ], child: const MyNavigationBar()),
     );
   }
 }
