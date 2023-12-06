@@ -33,18 +33,6 @@ void main() {
         overview: "Description 2",
         posterPath: "/image2"),
   ];
-  final tPopularMovieList = [
-    const MovieEntity(
-        id: 1,
-        title: "Test Movie 1",
-        overview: "Description 1",
-        posterPath: "/image1"),
-    const MovieEntity(
-        id: 2,
-        title: "Test Movie 2",
-        overview: "Description 2",
-        posterPath: "/image2"),
-  ];
 
   test("should get popular movie from remote data source", () async {
     when(mockPopularMovieRemoteDataSource.getPopularMovies())

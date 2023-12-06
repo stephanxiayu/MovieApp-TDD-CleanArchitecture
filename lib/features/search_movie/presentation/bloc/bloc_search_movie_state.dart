@@ -2,9 +2,9 @@ import 'package:clean_movie/features/search_movie/domian/entities/search_movie_e
 
 abstract class SearchMovieState {}
 
-class PopularMovieInitial extends SearchMovieState {}
+class SearchMovieInitial extends SearchMovieState {}
 
-class PopularMovieLoading extends SearchMovieState {}
+class SearchMovieLoading extends SearchMovieState {}
 
 class SearchMovieLoaded extends SearchMovieState {
   final List<SearchMovieEntity> searchMovieEntity;

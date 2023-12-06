@@ -22,7 +22,7 @@ import 'package:http/http.dart' as http;
 
 final getIt = GetIt.instance;
 
-void init() {
+void getItinit() {
   //bloc
   getIt.registerFactory(() => PopularMovieBloc(getPopularMovies: getIt()));
   getIt.registerFactory(() => TrendingMovieBloc(getTrendingMovies: getIt()));
